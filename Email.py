@@ -7,8 +7,8 @@ import datetime
 
 
 imap_server = "imap.gmail.com"
-email_address ="lucasmacielcampos27@gmail.com"
-password = "kpos qbst jqtj hqgt"
+email_address ="teste@gmail.com"
+password = "Secretkey"
 port = 993
 
 while True:
@@ -25,7 +25,7 @@ while True:
         date = now.strftime('%d-%b-%Y')
 
         # Realiza uma pesquisa no meu inbox que retorne somente os Emails do remetente desejado e somente da data atual
-        status, data = mail.search(None, 'UNSEEN FROM "gguimaraes647@gmail.com" SINCE "{}"'.format(date))
+        status, data = mail.search(None, 'UNSEEN FROM "teste@gmail.com" SINCE "{}"'.format(date))
 
 
         email_ids = data[0].split()
@@ -67,7 +67,7 @@ while True:
                 endereco = endereco.decode('utf-8')  #Converte bytes para string
 
             # Confirma se realmente é do Email correto
-            if endereco == 'Guilherme Guimaraes <gguimaraes647@gmail.com>':
+            if endereco == 'Teste <teste@gmail.com>':
                 print("Email localizado")
                 send_message(body)
 
